@@ -1,0 +1,53 @@
+<div class="row d-flex mb-3">
+  <div class="col-2">
+    <button class="btn-warning rounded" [routerLink]="['home']">Create New Project</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8 mx-4 rounded bg-gradient" style="background-color: #adb5bd">
+    <div class="row justify-content-center">
+      <div class="col-9 d-flex flex-column align-items-start rounded bg-warning bg-gradient">
+        <span class="text-white"><h2>Your Projects </h2></span>
+        <span class="text-white"><h6> All the projects in your database</h6></span>
+      </div>
+    </div>
+    <div class="row justify-content-end m-2">
+      <div class="col-4">
+        <input class="form-control" type="text" name="userName" [(ngModel)]="projectName" (ngModelChange)="search()"
+               placeholder="Enter name to search in table">
+      </div>
+    </div>
+
+    <div class="row">
+      <table class="table">
+        <thead>
+        <th>Index</th>
+        <th (click)="sort('name')">Project Name&nbsp;<i class="fa fa-sort"></i></th>
+        <th>Description</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let project of projects; let i = index ">
+          <th scope="row">{{i}}</th>
+          <td>{{project.name}}</td>
+          <td>{{project.description}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row d-flex align-content-between">
+      <div class="col-4 justify-content-start">
+        <p>caption</p>
+      </div>
+      <div class="col-8 d-flex justify-content-end">
+        <div class="d-flex justify-content-end p-2">
+          <i class="fa fa-arrow-left align-middle mx-1" (click)="decrementPagination()"></i>
+          <input style="width: 15%; height: 60%;" #paginationInput [(ngModel)]="pageNumber" (ngModelChange)="paginate()">
+          <i class="fa fa-arrow-right mx-1"  (click)="incrementPagination()"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

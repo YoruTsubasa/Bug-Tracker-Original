@@ -1,0 +1,88 @@
+<div class="vh-100" style="background-color: #9A616D;" *ngIf="router.url !== '/login' && router.url !== '/register' && router.url !== '/forgot-password'">
+  <div class="container-fluid" style="height:100%; max-height:100%;">
+    <div class="row" style="height:5%;">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark" >
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Navbar brand -->
+          <a class="navbar-brand" href="#"><span class="text-white">Brand Image</span></a>
+
+          <!-- links -->
+          <ul class="navbar-nav ms-auto d-flex flex-row">
+            <!-- Notification dropdown -->
+            <li class="nav-item">
+              <div ngbDropdown class="d-inline-block"><i class="fa fa-bell">
+                <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+
+                </button>
+              </i>
+
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem>Action - 1</button>
+                <button ngbDropdownItem>Another Action</button>
+                <button ngbDropdownItem>Something else is here</button>
+              </div>
+            </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" (click)="logout()"><span class="text-white">logout</span></a></li>
+          </ul>
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->
+    </div>
+    <div class="row " style="height:95%; max-height:inherit;">
+      <div class="col-2 p-0 bg-dark">
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse " style="height:100%;">
+          <div class="position-sticky">
+            <div class="list-group list-group-flush" >
+              <a class="list-group-item list-group-item-action py-3 ripple bg-dark" [routerLink]="['/home']" routerLinkActive="active"
+                 ariaCurrentWhenActive="page"><i
+                class="fa fa-home fa-fw me-3" style="color:white;"></i><span class="text-white">Dashboard Home</span ></a>
+
+              <a class="list-group-item list-group-item-action py-2 ripple bg-dark" [routerLink]="['/user-roles']" routerLinkActive="active"
+                 ariaCurrentWhenActive="page"><i
+                class="fa fa-users fa-fw me-3" style="color:white;"></i><span class="text-white">Manage Role Assignment</span></a>
+
+              <a href="#" class="list-group-item list-group-item-action py-2 ripple bg-dark" [routerLink]="['/project-users']" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                <i class="fa fa-user-plus fa-fw me-3" style="color:white;"></i><span class="text-white">Manage Project Users</span>
+              </a>
+
+              <a href="#" class="list-group-item list-group-item-action py-2 ripple bg-dark" [routerLink]="['/projects']" routerLinkActive="active"
+                 ariaCurrentWhenActive="page"><i
+                class="fa fa-tasks fa-fw me-3" style="color:white;"></i><span class="text-white">My Projects</span></a>
+
+              <a href="#" class="list-group-item list-group-item-action py-2 ripple bg-dark" [routerLink]="['/tickets']" routerLinkActive="active"
+                 ariaCurrentWhenActive="page"><i
+                class="fa fa-th-list fa-fw me-3" style="color:white;"></i><span class="text-white">My Tickets</span></a>
+
+              <a href="#" class="list-group-item list-group-item-action py-2 ripple bg-dark" [routerLink]="['/user-profile']" routerLinkActive="active"
+                 ariaCurrentWhenActive="page"><i
+                class="fa fa-user fa-fw me-3" style="color:white;"></i><span class="text-white">User Profile</span></a>
+            </div>
+          </div>
+        </nav>
+        <!-- Sidebar -->
+      </div>
+      <div class="col-10" id="main-layout" style="background-color: #565e64;">
+        <!--Main layout-->
+        <main style="margin-top: 58px;">
+          <div class="container pt-4">
+            <router-outlet></router-outlet>
+          </div>
+        </main>
+        <!--Main layout-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="single-layout" *ngIf="router.url === '/login' || router.url === '/register' || router.url === '/forgot-password'">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- content -->
+

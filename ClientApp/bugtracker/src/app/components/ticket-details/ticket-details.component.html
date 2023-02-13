@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-8 mx-4 rounded bg-gradient" style="background-color: #adb5bd">
+    <div class="row justify-content-center">
+      <div class="col-9 d-flex flex-column align-items-start rounded bg-warning bg-gradient">
+        <span class="text-white"><h2>Details for ticket </h2></span>
+        <div class="d-flex">
+          <a class="text-white px-2" [routerLink]="['/tickets']">
+            <span class="text-white">Back to list</span></a>
+          <span class="text-white px-2"> | </span>
+          <a class="text-white" [routerLink]="['/edit-ticket', ticketGuid]">
+            <span class="text-white">Edit ticket</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <table class="table">
+        <thead>
+        <th>Ticket Title&nbsp;</th>
+        <th>Description</th>
+        </thead>
+        <tbody>
+        <tr>{{ticket.title}}</tr>
+        <tr>{{ticket.description}}</tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

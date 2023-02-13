@@ -1,0 +1,10 @@
+<div [formGroup]="formGroup">
+  <label for="{{inputType}}">{{label}}</label>
+  <input type="{{inputType}}" id="{{inputType}}" class="form-control form-control-lg" formControlName="{{controlName}}"/>
+  <small *ngIf=" (control.dirty || control.touched) && control.errors && control.errors['required']" class="text-danger">
+    Field is required.
+  </small>
+  <small *ngIf="(control.dirty || control.touched) && control.errors && control.errors['pattern']" class="text-danger">
+    Only letters, numbers, dashes, or underscores.
+  </small>
+</div>

@@ -1,0 +1,10 @@
+.navbar {
+  margin-bottom: 0px;
+}
+
+#main-layout{
+  background-image: linear-gradient(120deg, #212529, #565e64);
+}
+#single-layout{
+  background-image: linear-gradient(to bottom, #212529, #565e64);
+}
